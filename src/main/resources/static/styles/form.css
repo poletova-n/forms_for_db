@@ -1,0 +1,19 @@
+body{
+    background: #ccffcc;
+    }
+
+.list-of-blocks{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background: #99ff99;
+    align-items: center;
+    }
+
+.info-block{
+
+    }
+.info-block_name{
+    width: 150px;
+    font-size: 10px;
+    }
