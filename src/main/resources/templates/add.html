@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Add</title>
-    <link href="styles/form.css"  rel="stylesheet" />
+    <h1>Add your contacts</h1>
+    <link href="styles/form.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="scripts/bundle.js"></script>
 </head>
 <body>
+<div class="link">
+    <a href="/list">See list of peoples</a>
+</div>
+
 <div class="list-of-blocks">
     <div class="info-block">
-       <div class="info-block_name"> Your name:</div>
-       <input  placeholder="Ivan" required/> <!-- name -->
+       <input class="info-block_input" placeholder="name" th:required="required" /> <!-- name -->
     </div>
     <div class="info-block">
-        <div class="info-block_name"> Your birthday:</div>
-        <input  placeholder="01/01/2007" required/> <!-- birthday -->
+        <input class="info-block_input" placeholder="birthday" th:required="required" /> <!-- birthday -->
     </div>
     <div class="info-block">
-        <div class="info-block_name"> Your phone number:</div>
-        <input   placeholder="8(800)555-35-35" required/> <!-- phone number -->
+        <input class="info-block_input"  placeholder="phone number" th:required="required" /> <!-- phone number -->
     </div>
     <div class="info-block">
-        <div class="info-block_name"> Your e-mail:</div>
-        <input   placeholder="example@gmail.com" required/> <!-- email -->
+        <input class="info-block_input"  placeholder="e-mail" th:required="required" /> <!-- email -->
     </div>
-
+    <div class="info-block">
+        <input class="add-button" value="Enter" type="submit"/>
+    </div>
 </div>
 </body>
 </html>

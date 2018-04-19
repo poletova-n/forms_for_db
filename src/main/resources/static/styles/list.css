@@ -3,50 +3,40 @@ h1{
     font-family: Comic Sans MS, Comic Sans, cursive;
     color: #002200;
     }
-
-
 body{
     background: #70ff71;
     }
-
-.list-of-blocks{
-    width: 480px;
-    height: 380px;
+.list{
+    width: 85%;
     background: #fefefe;
     box-shadow: 0.4em 0.4em 2px rgba(122,122,122,0.5);
-
     box-sizing: border-box;
     padding-top: 40px;
     margin-left: auto;
     margin-right: auto;
     }
-
-.info-block{
+.list_elem{
+    display: inline;
     margin: 10px;
     text-align: center;
     }
-
-.info-block_input{
+.list_elem_input{
     background: #eeeeee;
     text-decoration-color: #fefefe;
     border: 1px #eeeeee;
     padding-left: 10px;
-    width: 325px;
+    width: 15%;
     height: 40px;
     }
-.add-button{
+.button{
     text-align: center;
     background: #28cf00;
     border: 1px #28cf00;
-    width: 335px;
-    height: 40px;
+    width:  10%;
+    height: 30px;
     margin: 10px;
     }
-.add-button:disabled{
+.button:disabled{
     background: #a7a7a7;
     border: 1px #a7a7a7;
-    }
-.link{
-    margin: 0;
-    color: #333333;
     }
