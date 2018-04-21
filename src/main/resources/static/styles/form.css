@@ -42,6 +42,7 @@ body{
     height: 40px;
     margin: 10px;
     }
+
 .add-button:disabled{
     background: #a7a7a7;
     border: 1px #a7a7a7;

@@ -6,16 +6,16 @@
     <h1>Add your contacts</h1>
     <link href="styles/form.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
-    <script src="scripts/bundle.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
 <div class="link">
-    <a href="/list">See list of peoples</a>
+    <a href="/list.html">See list of peoples</a>
 </div>
 
-<div class="list-of-blocks">
+<form class="list-of-blocks" id="form">
     <div class="info-block">
-       <input class="info-block_input" placeholder="name" th:required="required" /> <!-- name -->
+       <input class="info-block_input"  placeholder="name" th:required="required" /> <!-- name -->
     </div>
     <div class="info-block">
         <input class="info-block_input" placeholder="birthday" th:required="required" /> <!-- birthday -->
@@ -27,9 +27,9 @@
         <input class="info-block_input"  placeholder="e-mail" th:required="required" /> <!-- email -->
     </div>
     <div class="info-block">
-        <input class="add-button" value="Enter" type="submit"/>
+        <button class="add-button" id="add-button" type="submit"> Enter </button>
     </div>
-</div>
+</form>
 </body>
 </html>
 
