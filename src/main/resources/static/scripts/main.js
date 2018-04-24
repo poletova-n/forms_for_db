@@ -13,14 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 flags: "i"
             }
         },
-        birthday: {
-            presence: true,
-            data:true
-        },
-        number: {
+        phone: {
             presence: true,
             format: {
-                pattern: "8\(9[0-9]{2}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}",
+                pattern: "[0-9\-]+",//"8\(9[0-9]{2}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}",
                 message: "enter correct phone number",
                 flags: "i"
             }
@@ -50,7 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm(form) {
 
         var result = validate(form, constraints);
-        return result!==false;
+        console.log(result);
+        if(!result){
+            result={};
+        }
+        if (Object.keys(result).length > 0){
+          return false;
+        }
+        return true;
     }
 
 

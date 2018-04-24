@@ -2,8 +2,12 @@ package com.poletova_n.add_form;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.persistence.*;
+
+import org.apache.commons.validator.routines.EmailValidator;
 
 
 @Entity

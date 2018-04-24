@@ -15,16 +15,16 @@
 
 <form class="list-of-blocks" id="form">
     <div class="info-block">
-       <input class="info-block_input"  placeholder="name" th:required="required" /> <!-- name -->
+       <input class="info-block_input" name="name" placeholder="name" th:required="required" /> <!-- name -->
     </div>
     <div class="info-block">
-        <input class="info-block_input" placeholder="birthday" th:required="required" /> <!-- birthday -->
+        <input class="info-block_input" placeholder="birthday" th:required="required" type="date" /> <!-- birthday -->
     </div>
     <div class="info-block">
-        <input class="info-block_input"  placeholder="phone number" th:required="required" /> <!-- phone number -->
+        <input class="info-block_input" name="phone"  placeholder="phone number" th:required="required" /> <!-- phone number -->
     </div>
     <div class="info-block">
-        <input class="info-block_input"  placeholder="e-mail" th:required="required" /> <!-- email -->
+        <input class="info-block_input" name="email"  placeholder="e-mail" th:required="required" /> <!-- email -->
     </div>
     <div class="info-block">
         <button class="add-button" id="add-button" type="submit"> Enter </button>
