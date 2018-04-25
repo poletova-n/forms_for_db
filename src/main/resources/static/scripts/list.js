@@ -51,9 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             };
+
             request.open('delete', '/list', true);
             request.setRequestHeader('Content-Type', 'application/json');
             request.send(toJSONString(this));
+            var form = this.closest('form');
+            form.parentNode.removeChild(form);
         });
     }
 });

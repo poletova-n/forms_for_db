@@ -15,7 +15,7 @@
         <input class="list_elem_input" name="name" th:value="${elem.name}" />
     </div>
     <div class="list_elem">
-        <input class="list_elem_input" name="birthday" th:value="${#dates.format(elem.birthday, 'yyyy-MM-dd')}"/>
+        <input class="list_elem_input" name="birthday" type="date" th:value="${#dates.format(elem.birthday, 'yyyy-MM-dd')}"/>
     </div>
     <div class="list_elem">
         <input class="list_elem_input" name="phone" th:value="${elem.phone}"/>
@@ -29,6 +29,7 @@
     <div class="list_elem">
         <input class="button js-delete-button" value="Delete" type="reset"/>
     </div>
+    <input type="hidden" name="id" th:value="${elem.id}" />
 </form>
 </body>
 </html>
