@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var saveButton = document.querySelector('.js-save-change-button');
    // var deleteButton = document.querySelector('.js-delete-button');
     var field = document.getElementsByClassName('list_elem_input');
-    var form = document.getElementById("form");;
+    var forms = document.querySelectorAll(".js-form");
     for (var i=0;i<field.length;i++) {
         field[i].onchange = function (e) {
             var result = validateForm(form);
@@ -14,48 +14,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    form.addEventListener('submit', function() {
+    for (var i=0;i<forms.length; i++) {
+        var form = forms[i];
+        form.addEventListener('submit', function () {
+            var res = validate(form, constraints);
 
-        var res = validate(form, constraints);
+            if (!res) {
+                event.preventDefault();
+            } else {
 
-        if (!res)
-        {
-            event.preventDefault();
-        } else {
+                event.preventDefault();
+                var request = new XMLHttpRequest();
+                request.onreadystatechange = function () {
+                    if (request.readyState === 4) {
+                        if (request.status !== 200) {
+                            console.log(request.responseText);
+                            alert('Something bad, try later');
+                            window.location.reload();
+                        }
+                    }
+                };
+                request.open('put', '/list', true);
+                request.setRequestHeader('Content-Type', 'application/json');
+                request.send(toJSONString(this));
+            }
+        });
 
-            event.preventDefault();
+        form.addEventListener('reset', function (e) {
             var request = new XMLHttpRequest();
-            request.onreadystatechange = function() {
-                if(request.readyState === 4) {
-                    if(request.status !== 200) {
-                        console.log(request.responseText);
+
+            request.onreadystatechange = function () {
+                if (request.readyState === 4) {
+                    if (request.status !== 200) {
                         alert('Something bad, try later');
                         window.location.reload();
                     }
                 }
             };
-            request.open('put', '/list',true);
-            request.setRequestHeader( 'Content-Type', 'application/json' );
-            request.send(toJSONString(form));
-        }
-    });
-
-    form.addEventListener('reset', function() {
-        form = e.target.closest("form");
-        var request = new XMLHttpRequest();
-
-        request.onreadystatechange = function() {
-            if(request.readyState === 4) {
-                if(request.status !== 200) {
-                    alert('Something bad, try later');
-                    window.location.reload();
-                }
-            }
-        };
-        request.open('delete', '/list',true);
-        request.setRequestHeader( 'Content-Type', 'application/json' );
-        request.send(toJSONString(form));
-    });
-
+            request.open('delete', '/list', true);
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.send(toJSONString(this));
+        });
+    }
 });
 

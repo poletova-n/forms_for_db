@@ -22,7 +22,7 @@ public class User implements Serializable, Comparable<User>{
     @Column
     private String phone;
 
-    @Column(columnDefinition="DATETIME")
+    @Column(columnDefinition="DATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date birthday;
 

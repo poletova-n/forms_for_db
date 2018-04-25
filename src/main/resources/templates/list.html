@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>List</title>
     <h1>Peoples</h1>
     <link href="styles/list.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/functions.js"></script>
     <script src="scripts/list.js"></script>
 </head>
 <body>
-<form class="list">
+<form class="list js-form" th:each="elem : ${list}">
     <div class="list_elem">
-        <input class="list_elem_input" name="name"/>
+        <input class="list_elem_input" name="name" th:value="${elem.name}" />
     </div>
     <div class="list_elem">
-        <input input class="list_elem_input"/>
+        <input class="list_elem_input" name="birthday" th:value="${#dates.format(elem.birthday, 'yyyy-MM-dd')}"/>
     </div>
     <div class="list_elem">
-        <input input class="list_elem_input" name="phone"/>
+        <input class="list_elem_input" name="phone" th:value="${elem.phone}"/>
     </div>
     <div class="list_elem">
-        <input input class="list_elem_input" name="email"/>
+        <input class="list_elem_input" name="email" th:value="${elem.email}"/>
     </div>
     <div class="list_elem">
         <input class="button js-save-change-button" value="Save change" type="submit"/>

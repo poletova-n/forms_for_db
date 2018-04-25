@@ -7,7 +7,8 @@ body{
     background: #70ff71;
     }
 .list{
-    width: 85%;
+
+    width: 1100px;
     background: #fefefe;
     box-shadow: 0.4em 0.4em 2px rgba(122,122,122,0.5);
     box-sizing: border-box;
@@ -19,6 +20,7 @@ body{
     display: inline;
     margin: 10px;
     text-align: center;
+
     }
 .list_elem_input{
     background: #eeeeee;
@@ -34,7 +36,6 @@ body{
     border: 1px #28cf00;
     width:  10%;
     height: 30px;
-    margin: 10px;
     }
 /*.button:disabled{
     background: #a7a7a7;

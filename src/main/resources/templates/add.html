@@ -6,6 +6,7 @@
     <h1>Add your contacts</h1>
     <link href="styles/form.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="scripts/functions.js"></script>
     <script src="scripts/main.js"></script>
 </head>
 <body>
@@ -18,7 +19,7 @@
        <input class="info-block_input" name="name" placeholder="name" th:required="required" /> <!-- name -->
     </div>
     <div class="info-block">
-        <input class="info-block_input" placeholder="birthday" th:required="required" type="date" /> <!-- birthday -->
+        <input class="info-block_input" name="birthday" placeholder="birthday" th:required="required" type="date" /> <!-- birthday -->
     </div>
     <div class="info-block">
         <input class="info-block_input" name="phone"  placeholder="phone number" th:required="required" /> <!-- phone number -->
