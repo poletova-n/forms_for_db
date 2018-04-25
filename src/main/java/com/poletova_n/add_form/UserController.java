@@ -29,8 +29,9 @@ public class UserController {
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public String addRecord(@ModelAttribute User user, Model model){
-
-        userService.save(user);
+        if(user.checkValidate()) {
+            userService.save(user);
+        }
         return "redirect:/";
     }
 
@@ -48,8 +49,9 @@ public class UserController {
     @RequestMapping(value = "/list", method = RequestMethod.PUT)
     public int updateRecord(@RequestBody User user, Model model)
     {
-
-        userService.save(user);
+        if(user.checkValidate()) {
+            userService.save(user);
+        }
         return user.getId();
     }
 

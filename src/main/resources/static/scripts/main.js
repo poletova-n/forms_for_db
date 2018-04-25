@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log(request.responseText);
                         alert('Something bad, try later');
                         window.location.reload();
+                    } else
+                    {
+                        form.reset();
+                        alert('success!');
+
                     }
                 }
             };
