@@ -5,10 +5,17 @@
     <meta charset="UTF-8"/>
     <title>Log in</title>
     <h1>Authorization</h1>
-    <link href="styles/authorization.css" rel="stylesheet" />
+    <link href="styles/login.css" rel="stylesheet" />
+    <script src="scripts/authorization.js"></script>
 </head>
 <body>
-<form class="autorize_form" th:action="@{/add}" method="post">
+<!--<div th:if="${param.error}">
+    Invalid username and password.
+</div>-
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>-->
+<form class="autorize_form" th:action="@{/login}" method="post">
     <div class="field">
         <input class="input_field" id="name" name="login" type="text"/>
     </div>

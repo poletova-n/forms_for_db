@@ -20,7 +20,7 @@ public class UserController {
 
    @RequestMapping("/")
    public String authorize(){
-       return "authorization";
+       return "login";
    }
 
 
