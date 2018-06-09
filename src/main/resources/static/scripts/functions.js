@@ -6,7 +6,7 @@ var constraints = {
             maximum: 30
         },
         format: {
-            pattern: "[a-zА-Я \-]+",
+            pattern: "^[A-Za-z]{1,}$",
             message: "enter correct name",
             flags: "i"
         }
@@ -14,7 +14,7 @@ var constraints = {
     phone: {
         presence: true,
         format: {
-            pattern: "[0-9\-]+",//"8\(9[0-9]{2}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}",
+            pattern: "^[0-9]{1,}$",//"8\(9[0-9]{2}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}",
             message: "enter correct phone number",
             flags: "i"
         }

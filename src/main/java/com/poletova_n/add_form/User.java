@@ -21,10 +21,16 @@ public class User implements Serializable, Comparable<User>{
     private String email;
     @Column
     private String phone;
+    @Column
+    private String password;
 
     @Column(columnDefinition="DATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date birthday;
+
+    User(){
+        password="password";
+    }
 
     public int getId() {
         return id;
@@ -66,9 +72,13 @@ public class User implements Serializable, Comparable<User>{
         this.birthday = birthday;
     }
 
+    public boolean checkPassword(String pass){
+        return pass.equals(password);
+    }
+
     private static boolean checkWithRegExp(String name, String phone){
-        Pattern p1 = Pattern.compile("^[a-zа-я \\-]+$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
-        Pattern p2 = Pattern.compile("^[0-9 \\-]+$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        Pattern p1 = Pattern.compile("^[a-z]+$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        Pattern p2 = Pattern.compile("^[0-9]+$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
         Matcher m1 = p1.matcher(name);
         Matcher m2 = p2.matcher(phone);
         return m1.matches() && m2.matches();

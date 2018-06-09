@@ -18,7 +18,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/")
+   @RequestMapping("/")
+   public String authorize(){
+       return "authorization";
+   }
+
+
+    @RequestMapping("/add")
     public String mainPage(Model model)
     {
         User user = new User();

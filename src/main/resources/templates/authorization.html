@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Log in</title>
+    <h1>Authorization</h1>
+    <link href="styles/authorization.css" rel="stylesheet" />
+</head>
+<body>
+<form class="autorize_form" th:action="@{/add}" method="post">
+    <div class="field">
+        <input class="input_field" id="name" name="login" type="text"/>
+    </div>
+    <div class="field">
+        <input class="input_field" id="password" name="password" type="password"/>
+    </div>
+    <div class="field">
+        <input class="button" value="Log in" type="submit"/>
+    </div>
+</form>
+</body>
+</html>
